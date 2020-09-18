@@ -199,6 +199,29 @@ function showPosition(position) {
 
     let currentIcon = document.querySelector(".icon");
     currentIcon.innerHTML = `<img class='icon' src='http://openweathermap.org/img/wn/${icon}@2x.png' width='30px'></img>`;
+    // display forecast temp if display current location
+
+    function ForecastedTemp(position) {
+      let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+
+      axios.get(url).then((response) => {
+        let morningForecast = Math.round(response.data.daily[0].temp.morn);
+        let morningForecastTemp = document.querySelector(
+          ".morningForecastTemp"
+        );
+        morningForecastTemp.innerHTML = `${morningForecast}`;
+
+        let afternoonForecast = Math.round(response.data.daily[0].temp.eve);
+        let afternoonForecastTemp = document.querySelector(
+          ".afternoonForecastTemp"
+        );
+        afternoonForecastTemp.innerHTML = `${afternoonForecast}`;
+        let nightforecast = Math.round(response.data.daily[0].temp.night);
+        let nightforecastTemp = document.querySelector(".nightforecastTemp");
+        nightforecastTemp.innerHTML = `${nightforecast}`;
+      });
+    }
+    ForecastedTemp();
   });
 }
 
