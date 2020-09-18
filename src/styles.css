@@ -46,3 +46,10 @@ h5 {
   text-align: center;
   padding: 0px;
 }
+
+.forecastWeather {
+  color: rgb(0, 39, 73);
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  padding: 0px;
