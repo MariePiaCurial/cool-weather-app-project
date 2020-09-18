@@ -3,6 +3,7 @@ let hours = now.getHours();
 let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
 let lat;
 let lon;
+let measure = "c";
 
 // 1) Create function currentTime : display current Date, Hour
 
@@ -224,7 +225,7 @@ function showPosition(position) {
     ForecastedTemp();
   });
 }
-
+// 4) Retrieve current position if click
 function retrievePosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
@@ -233,3 +234,56 @@ let button = document.querySelector("button");
 button.addEventListener("click", retrievePosition);
 
 retrievePosition();
+
+// 5) Conversion Celsius/Fahrenheit
+
+// function convert temp elements °C -> °F
+function convertToFahrenheit(event) {
+  event.preventDefault();
+
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature = temperatureElement.innerHTML;
+  let temperatureElement1 = document.querySelector(".morningForecastTemp");
+  let temperature1 = temperatureElement1.innerHTML;
+  let temperatureElement2 = document.querySelector(".afternoonForecastTemp");
+  let temperature2 = temperatureElement2.innerHTML;
+  let temperatureElement3 = document.querySelector(".nightforecastTemp");
+  let temperature3 = temperatureElement3.innerHTML;
+  temperature = Number(temperature);
+  if (measure == "c") {
+    temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+    temperatureElement1.innerHTML = Math.round((temperature1 * 9) / 5 + 32);
+    temperatureElement2.innerHTML = Math.round((temperature2 * 9) / 5 + 32);
+    temperatureElement3.innerHTML = Math.round((temperature3 * 9) / 5 + 32);
+  }
+  measure = "f";
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheitLink");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+// function convert  temp elements  °F -> °C
+
+function convertToCelsius(event) {
+  event.preventDefault();
+
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature = temperatureElement.innerHTML;
+  let temperatureElement1 = document.querySelector(".morningForecastTemp");
+  let temperature1 = temperatureElement1.innerHTML;
+  let temperatureElement2 = document.querySelector(".afternoonForecastTemp");
+  let temperature2 = temperatureElement2.innerHTML;
+  let temperatureElement3 = document.querySelector(".nightforecastTemp");
+  let temperature3 = temperatureElement3.innerHTML;
+  temperature = Number(temperature);
+  if (measure == "f") {
+    temperatureElement.innerHTML = Math.round((temperature - 32) * (5 / 9));
+    temperatureElement1.innerHTML = Math.round((temperature1 - 32) * (5 / 9));
+    temperatureElement2.innerHTML = Math.round((temperature2 - 32) * (5 / 9));
+    temperatureElement3.innerHTML = Math.round((temperature3 - 32) * (5 / 9));
+  }
+  measure = "c";
+}
+
+let celsiusLink = document.querySelector("#celsiusLink");
+celsiusLink.addEventListener("click", convertToCelsius);
