@@ -106,3 +106,22 @@ p {
   margin: 10px auto 10px;
   color: white;
 }
+
+.weatherCondition {
+  text-align: right;
+  margin: 0 10px;
+  padding: 0 !important;
+}
+.description {
+  text-align: left;
+  margin: 0 auto 0;
+  padding: 0 !important;
+}
+.currentWeather {
+  font-size: 12px;
+  padding: 2px;
+}
+
+.weather {
+  width: 20px;
+}
