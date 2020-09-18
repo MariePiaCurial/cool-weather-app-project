@@ -201,3 +201,12 @@ function showPosition(position) {
     currentIcon.innerHTML = `<img class='icon' src='http://openweathermap.org/img/wn/${icon}@2x.png' width='30px'></img>`;
   });
 }
+
+function retrievePosition() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+let button = document.querySelector("button");
+button.addEventListener("click", retrievePosition);
+
+retrievePosition();
