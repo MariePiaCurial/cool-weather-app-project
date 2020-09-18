@@ -61,3 +61,22 @@ a {
 a:hover {
   text-decoration: none;
 }
+.feature {
+  margin: 10px auto 0 !important;
+}
+
+input {
+  width: 230px !important;
+  height: 30px !important;
+  margin: 0 auto !important;
+  border-radius: 12px !important;
+  padding: 0 !important;
+  color: rgb(175, 166, 166);
+  text-align: center;
+  font-size: 10px;
+}
+
+.customizeSearch::placeholder {
+  color: rgb(175, 166, 166);
+  font-size: 14px;
+}
