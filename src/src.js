@@ -63,6 +63,7 @@ function showTemperature(event) {
     let temperature = Math.round(response.data.main.temp);
     let weather = document.querySelector("#temperature");
     weather.innerHTML = temperature;
+    measure = "c";
 
     // display weather description (API data)
 
@@ -160,7 +161,7 @@ function showPosition(position) {
     let temperature = Math.round(response.data.main.temp);
     let weather = document.querySelector("#temperature");
     weather.innerHTML = temperature;
-
+    measure = "c";
     // Display current weather description & elements in current position (Data API)
 
     let description = response.data.weather[0].description;
