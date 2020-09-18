@@ -80,3 +80,14 @@ input {
   color: rgb(175, 166, 166);
   font-size: 14px;
 }
+
+.btn-circle.btn-sm {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  margin-left: 10px;
+  padding: 0 !important;
+  font-size: 14px;
+  text-align: center;
+  color: rgb(0, 39, 73);
+}
