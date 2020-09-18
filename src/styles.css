@@ -1,0 +1,18 @@
+.container {
+  margin-top: 10%;
+  max-width: 700px;
+  padding: 30px;
+  border-radius: 16px;
+  background-image: linear-gradient(
+    rgba(247, 235, 230),
+    rgba(233, 197, 168),
+    rgba(212, 82, 1)
+  );
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  color: white;
+}
+div.row {
+  margin: auto 0;
+}
